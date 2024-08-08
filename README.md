@@ -79,6 +79,55 @@ A estrutura do repositório foi organizada para facilitar a navegação e manute
                         └───services          # Testes para serviços
 ```
 
+## Como Rodar o Projeto
+
+1. **Clone o Repositório**
+   - Execute o comando para clonar o repositório do projeto:
+     ```bash
+     git clone <URL-do-repositório>
+     ```
+
+2. **Instale as Dependências**
+   - Certifique-se de que você tenha o [Java JDK 21](https://www.oracle.com/java/technologies/javase-downloads.html) e [MySQL](https://dev.mysql.com/downloads/) instalados.
+   - Escolha uma IDE Java de sua preferência (por exemplo, [IntelliJ IDEA](https://www.jetbrains.com/idea/) ou [Eclipse](https://www.eclipse.org/)).
+
+3. **Configure a Conexão com o Banco de Dados**
+   - Abra o projeto na sua IDE.
+   - Navegue até o arquivo `application.properties` localizado em `src/main/resources`.
+   - Configure a conexão com o seu banco de dados MySQL ajustando as seguintes propriedades:
+     ```properties
+     spring.datasource.url=jdbc:mysql://localhost:3306/nome_do_banco
+     spring.datasource.username=seu_usuario
+     spring.datasource.password=sua_senha
+     ```
+
+4. **Inicialize o Sistema**
+   - Compile e execute o projeto a partir da sua IDE ou utilizando a linha de comando:
+     ```bash
+     ./mvnw spring-boot:run
+     ```
+     ou
+     ```bash
+     ./gradlew bootRun
+     ```
+
+5. **Configure o Banco de Dados**
+   - Acesse o MySQL e crie uma nova equipe:
+     ```sql
+     INSERT INTO equipe (nome, codigo, limite_maximo_usuarios) VALUES ('SeuNomeDaEquipe', 'codigo_da_equipe', limite_maximo);
+     ```
+   - Crie um novo usuário associado à equipe criada:
+     ```sql
+     INSERT INTO usuario (nome, codigo, equipe_codigo) VALUES ('NomeDoUsuario', 'codigo_usuario', 'codigo_da_equipe');
+     ```
+
+6. **Faça Login no Sistema**
+   - Acesse a aplicação através do navegador, normalmente disponível em `http://localhost:8080`.
+   - Faça login com as credenciais do usuário criado.
+
+7. **Pronto!**
+   - O sistema está pronto para uso. Você pode começar a explorar suas funcionalidades e personalizar conforme necessário.
+
 ## Equipe
 
 - Samuel Andrei Horn Thomas
