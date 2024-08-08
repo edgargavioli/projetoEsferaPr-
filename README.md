@@ -106,19 +106,11 @@ A estrutura do repositório foi organizada para facilitar a navegação e manute
      ```bash
      ./mvnw spring-boot:run
      ```
-     ou
-     ```bash
-     ./gradlew bootRun
-     ```
 
 5. **Configure o Banco de Dados**
    - Acesse o MySQL e crie uma nova equipe:
      ```sql
      INSERT INTO equipe (nome, codigo, limite_maximo_usuarios) VALUES ('SeuNomeDaEquipe', 'codigo_da_equipe', limite_maximo);
-     ```
-   - Crie um novo usuário associado à equipe criada:
-     ```sql
-     INSERT INTO usuario (nome, codigo, equipe_codigo) VALUES ('NomeDoUsuario', 'codigo_usuario', 'codigo_da_equipe');
      ```
 
 6. **Faça Login no Sistema**
