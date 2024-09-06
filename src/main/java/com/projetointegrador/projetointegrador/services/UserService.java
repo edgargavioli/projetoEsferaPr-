@@ -91,7 +91,7 @@ public class UserService {
         }
     }
 
-    // Método para alterar a senha
+    // Método para alterar a senhaa
     public ResponseEntity<?> changePassword(ChangePasswordDTO changePasswordDTO) {
         try {
             Optional<User> user = findByEmail(changePasswordDTO.getEmail());
